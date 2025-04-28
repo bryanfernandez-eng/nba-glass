@@ -1,0 +1,35 @@
+# === Python ===
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment variables if you add them later
+.env
+
+# === VSCode Settings ===
+.vscode/
+
+# === Data Files ===
+# Ignore all CSV files in the data folder
+backend/app/data/*.csv
+
+# === OS Specific ===
+.DS_Store
+Thumbs.db
+
+# === Jupyter Notebooks (if you ever use them) ===
+*.ipynb_checkpoints/
+
+# === Logs ===
+*.log
+
+# === Node (if you add frontend later) ===
+node_modules/
+dist/
+build/
+
+# === Misc ===
+*.sqlite3
