@@ -111,8 +111,7 @@ def get_player_seasons(player_name: str):
     return seasons
 
 def get_player_stat_trend(player_name: str, stat: str): 
-
-
+    
     stat = stat.upper()
     player_stats = regular_season_df[
         regular_season_df['PLAYER_NAME'].str.lower().str.replace(" ", "") == player_name.lower().replace(" ", "")
@@ -129,3 +128,15 @@ def get_player_stat_trend(player_name: str, stat: str):
     trend['SEASON_ID'] = trend['SEASON_ID'].astype(str)
     
     return trend.to_dict(orient='records')
+
+def get_all_players_stats(): 
+    return regular_season_df.to_dict(orient='records')
+
+def get_all_players_stats_year(year: int): 
+    selected_year = f"{year-1}-{str(year)[2:]}"
+    year_stats = regular_season_df[regular_season_df['SEASON_ID'] == selected_year]
+    
+    if year_stats.empty: 
+        return None
+    
+    return year_stats.to_dict(orient='records')
